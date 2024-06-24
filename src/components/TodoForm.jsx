@@ -10,7 +10,8 @@ export default function TodoForm({ fetchData }) {
   const [title, setTitle] = useState("");
   const [contents, setContents] = useState("");
 
-  const mutation = useMutation(addTodo, {
+  const mutation = useMutation({
+    mutationFn: addTodo,
     onSuccess: () => {
       fetchData();
     },
